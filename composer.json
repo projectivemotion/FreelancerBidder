@@ -1,0 +1,18 @@
+{
+  "name": "projectivemotion/freelancerbidder",
+  "description": "Auto Bidder tool for freelancer websites.",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Amado Martinez",
+      "email": "amado@projectivemotion.com"
+    } ],
+  "license": "MIT",
+  "autoload": {
+      "psr-4": {"Projectivemotion\\FreelancerBidder\\": "src/FreelancerBidder"}
+    },
+  "require": {
+    "doctrine/orm" : "2.5.4",
+    "symfony/console": "^3.0"
+  }
+}

@@ -22,6 +22,6 @@ class FindProjectsUpWork extends FindProjects
     protected function configure()
     {
         $this->setName('upwork:find')
-            ->setDescription('Find and display upwork projects.');
+            ->setDescription('Display latest jobs from upwork.com');
     }
 }

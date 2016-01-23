@@ -28,7 +28,7 @@ class Search
             'iColumns' => '35',
             'sColumns' => '',
             'iDisplayStart' => '0',
-            'iDisplayLength' => '500',
+            'iDisplayLength' => '10',
             'budget_min' => '560',
             'budget_max' => '1050',
             'skills_chosen' => '3', // php
@@ -39,7 +39,7 @@ class Search
 
     function setParam(string $key, $value)
     {
-        $this->service_params['post'] = $value;
+        $this->service_params['post'][$key] = $value;
         return $this;
     }
 

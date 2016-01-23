@@ -15,7 +15,7 @@ class FindProjectsFreelancer extends FindProjects
     protected function configure()
     {
         $this->setName('freelancer:find')
-            ->setDescription('Find and display projects.');
+            ->setDescription('Display latest jobs from freelancer.com');
     }
 
     public function Projects()

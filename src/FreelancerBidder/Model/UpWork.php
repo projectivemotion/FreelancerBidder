@@ -17,7 +17,11 @@ class UpWork extends Project
             'title'     => $job->title,
             'created'   => $job->createdOn,
             'ends'      => '',
-            'URL'       => self::getJobPageURL($job)
+            'URL'       => self::getJobPageURL($job),
+            'num_bids'  => -1,
+            'budget_min' => 0,
+            'budget_max' => 0,
+            'avg_bid' => 0
             ];
         $Project = new self($data);
         return $Project;

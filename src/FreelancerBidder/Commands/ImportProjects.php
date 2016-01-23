@@ -8,33 +8,61 @@
 namespace Projectivemotion\FreelancerBidder\Commands;
 
 use Doctrine\DBAL\Driver\PDOException;
+use Doctrine\ORM\EntityManager;
 use Projectivemotion\FreelancerBidder\Application;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Command\Command;
 
 
-use Projectivemotion\FreelancerBidder\Freelancer\Search;
-
 
 class ImportProjects extends Command
 {
+    /**
+     * @var Application
+     */
+    protected $app;
+
+    public function __construct(Application $application)
+    {
+        parent::__construct(null);
+        $this->app  =   $application;
+    }
+
     protected function configure()
     {
-        $this->setName('bid:refresh')
-            ->setDescription('Refresh local projects database.');
+        $this->setName('bidder:import')
+            ->setDescription('Import newest jobs.');
+
+        $this->addArgument('website', InputArgument::OPTIONAL, "Which website.", "ALL");
+    }
+
+    public function ImportProjects(FindProjects $FinderCommand, EntityManager $em, OutputInterface $output)
+    {
+        $output->writeln("Executing " . $FinderCommand->getName());
+        foreach($FinderCommand->Projects() as $Project)
+        {
+            $output->write(".");
+            $em->persist($Project);
+        }
+        $output->writeln("");
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $Search = new Search();
-        $Search->Execute();
+        $em = Application::getEntityManager();
+        $website = $input->getArgument('website');
 
-        $em =   Application::getEntityManager();
-        foreach($Search->Projects() as $Project)
+        if($website == 'ALL')
+            $finders    =   $this->app->getProjectFinders();
+        else{
+            $finders = [$this->getApplication()->find($website . ':find')];
+        }
+
+        foreach($finders as $FinderCommand)
         {
-            $output->write(".");
-            $em->persist($Project);
+            $this->ImportProjects($FinderCommand, $em, $output);
         }
 
         try {

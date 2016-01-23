@@ -6,6 +6,6 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 return Doctrine\ORM\Tools\Console\ConsoleRunner::createHelperSet(\Projectivemotion\FreelancerBidder\Application::getEntityManager());

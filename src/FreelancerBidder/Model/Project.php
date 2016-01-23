@@ -334,6 +334,11 @@ abstract class Project
         $this->$column = $value;
     }
 
+    public function getField($field)
+    {
+        return $this->$field;
+    }
+
     function __construct($data = NULL)
     {
         foreach($data as $key => $value)

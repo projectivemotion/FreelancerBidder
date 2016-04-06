@@ -5,11 +5,12 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Model;
+namespace projectivemotion\FreelancerBidder\Services\Freelancer;
+use projectivemotion\FreelancerBidder\Project;
 
 
 /** @Entity */
-class FreelancerCom extends Project
+class FreelancerProject extends Project
 {
     static function FromNumericArray($data)
     {

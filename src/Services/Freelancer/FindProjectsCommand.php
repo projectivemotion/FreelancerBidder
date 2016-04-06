@@ -5,12 +5,12 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Commands;
+namespace projectivemotion\FreelancerBidder\Services\Freelancer;
 
 
-use Projectivemotion\FreelancerBidder\Freelancer\Search;
+use projectivemotion\FreelancerBidder\Commands\AbstractFindProjects;
 
-class FindProjectsFreelancer extends FindProjects
+class FindProjectsCommand extends AbstractFindProjects
 {
     protected function configure()
     {

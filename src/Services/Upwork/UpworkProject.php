@@ -5,10 +5,11 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Model;
+namespace projectivemotion\FreelancerBidder\Services\Upwork;
+use projectivemotion\FreelancerBidder\Project;
 
 /** @Entity */
-class UpWork extends Project
+class UpworkProject extends Project
 {
     static function JsonToProject($job)
     {

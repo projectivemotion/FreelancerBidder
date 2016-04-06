@@ -5,18 +5,18 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Commands;
+namespace projectivemotion\FreelancerBidder\Services\Upwork;
 
 
-use Projectivemotion\FreelancerBidder\Upwork\Search;
+use projectivemotion\FreelancerBidder\Commands\AbstractFindProjects;
 
-class FindProjectsUpWork extends FindProjects
+class FindProjectsCommand extends AbstractFindProjects
 {
     public function Projects()
     {
         $Search = new Search();
         $Search->Execute();
-        return $Search->Projects();
+        return $Search->generateProjects();
     }
 
     protected function configure()

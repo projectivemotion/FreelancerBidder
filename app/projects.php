@@ -9,5 +9,5 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 
-$app    = new \Projectivemotion\FreelancerBidder\Application();
+$app    = new \projectivemotion\FreelancerBidder\Application();
 $app->run();

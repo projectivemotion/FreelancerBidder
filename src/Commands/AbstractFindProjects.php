@@ -5,16 +5,14 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Commands;
+namespace projectivemotion\FreelancerBidder\Commands;
 
+use projectivemotion\FreelancerBidder\Project;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Command\Command;
 
-
-use Projectivemotion\FreelancerBidder\Model\Search;
-
-abstract class FindProjects extends Command
+abstract class AbstractFindProjects extends Command
 {
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -24,5 +22,8 @@ abstract class FindProjects extends Command
         }
     }
 
+    /**
+     * @return Project[]
+     */
     abstract public function Projects();
 }

@@ -5,7 +5,7 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Model;
+namespace projectivemotion\FreelancerBidder;
 
 
 /**

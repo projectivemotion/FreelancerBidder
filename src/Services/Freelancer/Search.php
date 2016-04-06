@@ -5,11 +5,10 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace Projectivemotion\FreelancerBidder\Freelancer;
+namespace projectivemotion\FreelancerBidder\Services\Freelancer;
 
 
 use projectivemotion\BaseScraper;
-use Projectivemotion\FreelancerBidder\Model\FreelancerCom;
 
 class Search extends BaseScraper
 {
@@ -53,7 +52,7 @@ class Search extends BaseScraper
 
     function JsonToProject(array $numericdata)
     {
-        return FreelancerCom::FromNumericArray($numericdata);
+        return FreelancerProject::FromNumericArray($numericdata);
     }
 
     function Execute()
@@ -67,7 +66,7 @@ class Search extends BaseScraper
     }
 
     /**
-     * @return FreelancerCom[]
+     * @return FreelancerProject[]
      */
     function getProjects()
     {

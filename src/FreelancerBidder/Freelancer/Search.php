@@ -8,10 +8,13 @@
 namespace Projectivemotion\FreelancerBidder\Freelancer;
 
 
+use projectivemotion\BaseScraper;
 use Projectivemotion\FreelancerBidder\Model\FreelancerCom;
 
-class Search
+class Search extends BaseScraper
 {
+    protected $domain   =   'www.freelancer.com';
+
     protected $service_params = [
         'scheme' => 'https',
         'host' => 'www.freelancer.com',
@@ -20,6 +23,11 @@ class Search
         ];
 
     protected $json_result  =   null;
+
+    public function getPostParams()
+    {
+        return $this->service_params['post'];
+    }
 
     function Reset()
     {
@@ -43,19 +51,6 @@ class Search
         return $this;
     }
 
-    // @todo rewrite, make cleaner, use php 7 funcs
-    function CreateUrl()
-    {
-        $new_urlarray = $this->service_params;
-        $query_string = http_build_query($new_urlarray['post']);
-
-        $url = sprintf("%s://%s%s?%s",
-            $new_urlarray['scheme'], $new_urlarray['host'],
-            $new_urlarray['path'], $query_string);
-
-        return $url;
-    }
-
     function JsonToProject(array $numericdata)
     {
         return FreelancerCom::FromNumericArray($numericdata);
@@ -63,16 +58,20 @@ class Search
 
     function Execute()
     {
-        $this->json_result = file_get_contents($this->CreateUrl());
+        $new_urlarray = $this->service_params;
+        $url = sprintf("%s://%s%s",
+            $new_urlarray['scheme'], $new_urlarray['host'],
+            $new_urlarray['path']);
+        $result =   $this->cache_get($url, $this->getPostParams());
+        $this->json_result = json_decode($result);
     }
 
     /**
      * @return FreelancerCom[]
      */
-    function Projects()
+    function getProjects()
     {
-        $data   =   json_decode($this->json_result);
-        foreach($data->aaData as $row)
+        foreach($this->json_result->aaData as $row)
         {
             yield $this->JsonToProject($row);
         }

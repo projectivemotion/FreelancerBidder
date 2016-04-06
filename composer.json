@@ -11,7 +11,14 @@
   "autoload": {
       "psr-4": {"Projectivemotion\\FreelancerBidder\\": "src/FreelancerBidder"}
     },
+  "repositories": [
+    {
+      "url": "https://github.com/projectivemotion/PhpScraperTools",
+      "type": "vcs"
+    }
+  ],
   "require": {
+    "projectivemotion/PhpScraperTools": "dev-master",
     "doctrine/orm" : "2.5.4",
     "symfony/console": "^3.0"
   }

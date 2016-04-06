@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eb0e87c844f00de38c83c2da772d64cb",
-    "content-hash": "04ec85d133488f9faa62aac04e09930d",
+    "hash": "b2d8f16aec05a73c687de52dc571c09b",
+    "content-hash": "c7dc9edb886f0d0a66ca931bb22a7675",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -289,12 +289,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "801943503a9e673450456dd271be6e3d215c0a45"
+                "reference": "9e1300bffb9cae048705bb4ed39c19f33e6896d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/801943503a9e673450456dd271be6e3d215c0a45",
-                "reference": "801943503a9e673450456dd271be6e3d215c0a45",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/9e1300bffb9cae048705bb4ed39c19f33e6896d6",
+                "reference": "9e1300bffb9cae048705bb4ed39c19f33e6896d6",
                 "shasum": ""
             },
             "require": {
@@ -352,7 +352,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-01-12 14:54:56"
+            "time": "2016-01-23 14:30:23"
         },
         {
             "name": "doctrine/inflector",
@@ -606,17 +606,53 @@
             "time": "2016-01-05 21:34:58"
         },
         {
+            "name": "projectivemotion/PhpScraperTools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/projectivemotion/PhpScraperTools.git",
+                "reference": "69f5aa1d65d4750c143b1dd8de44797385c653f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/projectivemotion/PhpScraperTools/zipball/69f5aa1d65d4750c143b1dd8de44797385c653f6",
+                "reference": "69f5aa1d65d4750c143b1dd8de44797385c653f6",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "projectivemotion\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amado Martinez",
+                    "email": "amado@projectivemotion.com"
+                }
+            ],
+            "description": "PHP Curl Wrapper. Written specifically for scraping purposes.",
+            "support": {
+                "source": "https://github.com/projectivemotion/PhpScraperTools/tree/master",
+                "issues": "https://github.com/projectivemotion/PhpScraperTools/issues"
+            },
+            "time": "2016-02-23 09:56:38"
+        },
+        {
             "name": "symfony/console",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1710486b6038c47b252630b0f4c220faf90e7f96"
+                "reference": "619dcdc8a07a7b53e641040ff805d75201c02abe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1710486b6038c47b252630b0f4c220faf90e7f96",
-                "reference": "1710486b6038c47b252630b0f4c220faf90e7f96",
+                "url": "https://api.github.com/repos/symfony/console/zipball/619dcdc8a07a7b53e641040ff805d75201c02abe",
+                "reference": "619dcdc8a07a7b53e641040ff805d75201c02abe",
                 "shasum": ""
             },
             "require": {
@@ -663,7 +699,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-21 10:01:50"
+            "time": "2016-02-17 06:14:41"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -671,12 +707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "d7f01c96a4dde264682cf36c28e62086c77a09d4"
+                "reference": "1289d16209491b584839022f29257ad859b8532d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d7f01c96a4dde264682cf36c28e62086c77a09d4",
-                "reference": "d7f01c96a4dde264682cf36c28e62086c77a09d4",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
+                "reference": "1289d16209491b584839022f29257ad859b8532d",
                 "shasum": ""
             },
             "require": {
@@ -688,7 +724,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -722,13 +758,15 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-13 07:16:33"
+            "time": "2016-01-20 09:13:37"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "projectivemotion/phpscrapertools": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

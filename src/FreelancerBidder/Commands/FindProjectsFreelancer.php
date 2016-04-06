@@ -22,6 +22,6 @@ class FindProjectsFreelancer extends FindProjects
     {
         $Search = new Search();
         $Search->Execute();
-        return $Search->Projects();
+        return $Search->getProjects();
     }
 }
